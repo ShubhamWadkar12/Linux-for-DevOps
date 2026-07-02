@@ -1,4 +1,7 @@
 # Linux-for-DevOps
+
+Notes : https://app.eraser.io/workspace/1QwekzTJC2FJAoRmYL1M
+
 ### What is Linux?
 
 Linux is an open-source operating system that manages your computer's hardware and software.
@@ -200,3 +203,59 @@ ________
 | `clear`   | Clear terminal screen             |
 | `history` | Show previously executed commands |
 | ` cd /usr/bin + ls ` | To see all linux commands |
+
+_______
+
+### Linux Boot Process
+
+```text
+                 +----------------+
+                 |   Power On     |
+                 +----------------+
+                          │
+                          ▼
+                 +----------------+
+                 |  BIOS / UEFI   |
+                 | Hardware Check |
+                 |     (POST)     |
+                 +----------------+
+                          │
+                          ▼
+                 +----------------+
+                 | GRUB Bootloader|
+                 +----------------+
+                          │
+                          ▼
+                 +----------------+
+                 | Linux Kernel   |
+                 +----------------+
+                          │
+                          ▼
+                 +----------------+
+                 | systemd (PID 1)|
+                 |  Init Process  |
+                 +----------------+
+                          │
+          ┌───────────────┼────────────────┐
+          ▼               ▼                ▼
+   +-------------+  +-------------+  +-------------+
+   | Docker      |  | SSH         |  | Nginx       |
+   | Service     |  | Service     |  | Service     |
+   +-------------+  +-------------+  +-------------+
+          │
+          ▼
+                 +------------------------+
+                 | Login Screen / Shell   |
+                 +------------------------+
+```
+
+### Common Linux Process States
+
+| State | Meaning               | Description                                                   |
+| ----- | --------------------- | ------------------------------------------------------------- |
+| **R** | Running               | Process is running or ready to run on the CPU.                |
+| **S** | Sleeping              | Waiting for an event (most common state).                     |
+| **D** | Uninterruptible Sleep | Waiting for I/O (disk, network, etc.). Cannot be interrupted. |
+| **T** | Stopped               | Process has been paused.                                      |
+| **Z** | Zombie                | Process has finished but its entry still exists.              |
+| **I** | Idle                  | Idle kernel thread (common on modern Linux).                  |
