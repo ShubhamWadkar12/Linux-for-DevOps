@@ -227,9 +227,41 @@ When you try to connect, SSH checks this file to verify whether your public key 
 
 
 ---
-```
-exit :Used to log out of the current SSH session.
-sshd_config + cat /etc/ssh/sshd_config : `sshd_config` is the **configuration file for the SSH server (SSH Daemon).
+
+# Common Linux Commands
+
+| Command                        | Description                                                                                                                                      |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `exit`                         | Logs out of the current SSH session.                                                                                                             |
+| `cat /etc/ssh/sshd_config`     | Displays the SSH server (`sshd`) configuration file.                                                                                             |
+| `sudo apt install nginx`       | Installs the Nginx web server.                                                                                                                   |
+| `systemctl status nginx`       | Checks the current status of the Nginx service.                                                                                                  |
+| `sudo systemctl start nginx`   | Starts the Nginx service.                                                                                                                        |
+| `sudo systemctl stop nginx`    | Stops the Nginx service.                                                                                                                         |
+| `sudo systemctl restart nginx` | Restarts the Nginx service.                                                                                                                      |
+| `journalctl -u nginx`          | Displays logs for the Nginx service.                                                                                                             |
+| `journalctl -u nginx -f`       | Displays live (real-time) logs for the Nginx service.                                                                                            |
+| `sudo apt update`              | Downloads the latest package information from the repositories. It updates the local package index but does **not** install or upgrade packages. |
+| `sudo apt upgrade`             | Upgrades installed packages to their latest available versions using the updated package index.                                                  |
+
+
+### User management
+
+# Linux User Management Commands
+
+| Command                  | Description                                                                      |
+| ------------------------ | -------------------------------------------------------------------------------- |
+| `sudo useradd -m berlin` | Creates a new user named **berlin** with a home directory (`/home/berlin`).      |
+| `sudo`                   | Executes the command with administrator (root) privileges.                       |
+| `useradd`                | Creates a new Linux user account.                                                |
+| `-m`                     | Automatically creates a home directory for the new user.                         |
+| `berlin`                 | The username of the new user.                                                    |
+| `sudo passwd berlin`     | Sets or changes the password for the **berlin** user.                            |
+| `su berlin`              | Switches to the **berlin** user.                                                 |
+| `su - berlin`            | Switches to the **berlin** user and loads their login environment (recommended). |
+| `whoami`                 | Displays the username of the currently logged-in user.                           |
+| `id berlin`              | Displays the UID, GID, and group information of the **berlin** user.             |
+
 
 
 
