@@ -1,5 +1,7 @@
 # SSH (Secure Shell)
-
+```
+exit : to logout server
+```
 ## What is SSH?
 
 **SSH (Secure Shell)** is a secure way to connect to another computer over a network and control it using the command line.
@@ -225,5 +227,9 @@ When you try to connect, SSH checks this file to verify whether your public key 
 
 
 ---
+```
+exit :Used to log out of the current SSH session.
+sshd_config + cat /etc/ssh/sshd_config : `sshd_config` is the **configuration file for the SSH server (SSH Daemon).
+
 
 
