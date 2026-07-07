@@ -189,6 +189,7 @@ ________
 | `ls`      | List files and directories        |
 | `cd`      | Change current directory          |
 | `mkdir`   | Create a new directory            |
+| `mkdir -p josh/batch10/files`   | Create  directory under directory|
 | `rmdir`   | Remove empty directory            |
 | `touch`   | Create empty file                 |
 | `cp`      | Copy files or directories         |
