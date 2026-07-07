@@ -261,7 +261,52 @@ When you try to connect, SSH checks this file to verify whether your public key 
 | `su - berlin`            | Switches to the **berlin** user and loads their login environment (recommended). |
 | `whoami`                 | Displays the username of the currently logged-in user.                           |
 | `id berlin`              | Displays the UID, GID, and group information of the **berlin** user.             |
+| `sudo useradd -m tokyo -s /usr/bin/bash ` | cretaes new user without black terminal             |
 
 
+## Grouping
+```
+sudo usermod -aG <group_name> <username>
+```
+| Part         | Meaning                                                                                 |
+| ------------ | --------------------------------------------------------------------------------------- |
+| `sudo`       | Run the command with administrator (root) privileges.                                   |
+| `usermod`    | Modify an existing user account.                                                        |
+| `-a`         | **Append** the user to the new group(s) without removing existing supplementary groups. |
+| `-G`         | Specify the **supplementary (secondary) group(s)** to assign.                           |
+| `<group_name>` | The group to add the user to.                                                           |
+| `<username>`     | The username to modify.                                                                 |
 
+| Command                                 | Purpose                                           |
+| --------------------------------------- | ------------------------------------------------- |
+| `sudo gpasswd -a <username> <group>`    | Add a user to a group.                            |
+| `sudo gpasswd -d <username> <group>`    | Remove a user from a group.                       |
+| `sudo gpasswd -A <user1,user2> <group>` | Assign group administrator(s).                    |
+| `sudo gpasswd -M <user1,user2> <group>` | Replace the group's member list.                  |
+| `sudo gpasswd -r <group>`               | Remove the group's password.                      |
+| `sudo gpasswd <group>`                  | Set or change the group's password (rarely used). |
+| ` newgrp docker`                  |refresh the service |
+
+```
+Why use a group?
+
+Suppose there's a project folder:
+
+/project
+
+Instead of giving permissions like this:
+
+Give Berlin access ✅
+Give Tokyo access ✅
+Give Mumbai access ✅
+
+you simply make the folder belong to the devops group:
+
+Owner : root
+Group : devops
+
+Now everyone in the devops group can access the folder according to the group's permissions.
+```
+```
+chown stands for Change Owner.
 
